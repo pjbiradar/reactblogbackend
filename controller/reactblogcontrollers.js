@@ -1,7 +1,7 @@
 const { query } = require("express");
 
 const blogcontroller=(req,res)=>{
-    console.log("*******REQ params****", req.params);
+    console.log("*******REQ params****", req.query);
     
     const user=[
         {
@@ -318,8 +318,9 @@ const blogcontroller=(req,res)=>{
         
     ]
 
-    if(req.params.category){
-        const userdata=user.filter((val)=>val.category===req.params.category)
+    if(req.query.category){
+        const userdata=user.filter((val)=>val.category.toLowerCase()===req.query.category.toLowerCase())
+        console.log("hello")
         res.send(userdata)
 
     }else if(req.params.Id){
