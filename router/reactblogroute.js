@@ -4,7 +4,8 @@ const reactblogcontroller=require('../controller/reactblogcontrollers')
 
 router.route("/blog").get(reactblogcontroller);
 // router.route("/blog/:category").get(reactblogcontroller);
-router.route("/blog/category/:Id").get(reactblogcontroller);
+router.route("/blog/category/:id").get(reactblogcontroller);
+
 
 
 
